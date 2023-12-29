@@ -2,7 +2,9 @@
 <html lang='{{ .Site.LanguageCode }}'>
 {{ partial "head.html" . }}
 <body class="flex flex-col min-h-screen">
-    {{- partial "dev/dev-tools.html" . -}}
+    {{ if (eq .Site.Params.mode "development") }}
+        {{- partial "dev/dev-tools.html" . -}}
+    {{ end }}
     {{- partial "header.html" . -}}
     <!-- Checking if index.html -->
     {{ if (ne .Page.Permalink "/") }}
