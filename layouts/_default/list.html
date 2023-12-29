@@ -1,0 +1,54 @@
+{{ define "main" }}
+<div
+    class="lg:h-[85vh] pt-10 bg-sky-50 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:30px_30px] ">
+    <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+        <h2 class="block font-bold text-gray-800 text-5xl md:text-6xl lg:text-7xl dark:text-gray-200">
+            {{cond (eq .Kind "term") "#" ""}}
+            {{if (eq .Kind "term") }}
+            {{ .Title | lower }}
+            {{ else }}
+            {{ .Title }}
+            {{ end }}
+        </h2>
+    </div>
+    <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+        <!-- Grid -->
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6">
+            {{ range .Pages }}
+            <!-- Card -->
+            <a href="{{ .Permalink }}"
+                class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                href="#">
+                <div class="p-4 md:p-5">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h3
+                                class="group-hover:text-blue-600 font-semibold text-gray-800 dark:group-hover:text-gray-400 dark:text-gray-200">
+                                {{cond (eq .Kind "term") "#" ""}}
+                                {{if (eq .Kind "term") }}
+                                {{ .Title | lower }}
+                                {{ else }}
+                                {{ .Title }}
+                                {{ end }}
+                            </h3>
+                            <p class="text-sm text-gray-500">
+                                {{ .Description }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {{ if (eq .Kind "page") }}
+                <div class="bg-gray-100 rounded-b-lg pt-2 pb-2 border-t pl-4 dark:border-gray-700">
+                    <p class="text-xs text-gray-500 dark:text-gray-500">
+                        Blog Article
+                    </p>
+                </div>
+                {{ end }}
+            </a>
+            <!-- End Card -->
+            {{ end }}
+        </div>
+        <!-- End Grid -->
+    </div>
+</div>
+{{ end }}

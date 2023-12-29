@@ -1,0 +1,16 @@
+{{ define "main" }}
+<div
+    class="lg:h-[85vh] bg-slate-100 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:30px_30px] pt-10 pb-10 ">
+    <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+        <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+            <h2 class="block font-bold text-gray-800 text-5xl md:text-6xl lg:text-7xl dark:text-gray-200">{{ .Title }}</h2>
+            <p class="mt-5 text-gray-600 dark:text-gray-400"> {{ .Description }} </p>
+        </div>        
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6">
+            {{ range .Pages }}
+                {{ partial "components/project-card" . }}            
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}

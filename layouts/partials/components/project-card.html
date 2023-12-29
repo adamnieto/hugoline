@@ -1,0 +1,19 @@
+<!-- Card -->
+<a class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+    href="{{ .Page.Params.external_link }}">
+    
+    <div class="p-4 md:p-5">
+        <div class="flex justify-between items-center">
+            <div>
+                <h3
+                    class="group-hover:text-blue-600 font-semibold text-gray-800 dark:group-hover:text-gray-400 dark:text-gray-200">
+                    {{ .Title }}
+                </h3>
+                <p class="pt-4 text-sm text-gray-500">
+                    {{ .Description }}
+                </p>
+            </div>
+        </div>
+    </div>
+</a>
+<!-- End Card -->

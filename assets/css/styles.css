@@ -1,0 +1,17 @@
+/* TailwindCSS base styles */
+/* see https://tailwindcss.com/docs/functions-and-directives#tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+
+/* Used to get scrollbar for code snippet */
+.highlight div,
+.highlight pre {
+  overflow-x: auto;
+}
+
+/* Site Specific */
+/* put site specific css styles here using the @layer directive */
+/* see https://tailwindcss.com/docs/functions-and-directives#layer */
