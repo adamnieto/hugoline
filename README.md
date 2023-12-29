@@ -1,12 +1,19 @@
 # Hugoline
 
+[![GitHub License](https://img.shields.io/github/license/adamnieto/hugoline?style=default)](https://github.com/adamnieto/hugoline/blob/main/LICENSE)
+
+![image](https://github.com/adamnieto/hugoline/assets/13468204/3f09aba2-7d3d-471c-ac92-a2978e2d5d89)
+
+
 Hugline is a elegant portfolio theme for Hugo. The theme was was created using [Preline UI](https://preline.co/index.html). Preline UI is a open source UI framework that was built using [Tailwind CSS](https://tailwindcss.com/). [Hugo](https://gohugo.io/) is a static site generated written in the Golang programming language.
 
 Special thanks to [dirkolbrich/hugo-tailwindcss-starter-theme](https://github.com/dirkolbrich/hugo-tailwindcss-starter-theme) which helped to kickstart the theme.
 
-**Documentation** can be found here: [**📖 Wiki**](https://github.com/adamnieto/hugoline/wiki)
+## Important Links
 
-**Example Site** can be found here: [**exampleSite**](https://github.com/adamnieto/hugoline/tree/exampleSite). The demo is uses the [exampleSite](https://github.com/adamnieto/hugoline/tree/exampleSite) directory as its source.
+* **Documentation** can be found in the [**📖 Wiki**](https://github.com/adamnieto/hugoline/wiki)
 
-[![GitHub](https://img.shields.io/github/license/adamnieto/hugoline)](https://github.com/adamnieto/hugoline/blob/main/LICENSE)
+* **Example Site** can be found here: [**exampleSite**](https://github.com/adamnieto/hugoline/tree/exampleSite). The demo uses the [exampleSite](https://github.com/adamnieto/hugoline/tree/exampleSite) directory as its source.
+
+
 
