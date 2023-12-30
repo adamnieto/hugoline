@@ -15,4 +15,5 @@
     <figcaption>{{ with $.Title | safeHTML }}{{ . }}{{ end }}</figcaption>
 </figure>
 {{- else -}}
-<img class="rounded-xl" src="{{ .Destination | safeURL }}" width="538" height="359" alt="{{ $.Text }}" />{{- end -}}
+<img class="rounded-lg" src="{{ .Destination | safeURL }}" width="auto" alt="{{ $.Text }}" />
+{{- end -}}
