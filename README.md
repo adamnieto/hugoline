@@ -2,7 +2,8 @@
 
 [![GitHub License](https://img.shields.io/github/license/adamnieto/hugoline?style=default)](https://github.com/adamnieto/hugoline/blob/main/LICENSE)
 
-![image](https://github.com/adamnieto/hugoline/assets/13468204/3f09aba2-7d3d-471c-ac92-a2978e2d5d89)
+![hugoline_example](https://github.com/adamnieto/hugoline/assets/13468204/78a43eed-8492-4334-b72d-0f05ef3d2f83)
+
 
 Hugline is a elegant portfolio theme for Hugo. The theme was was created using [Preline UI](https://preline.co/index.html). Preline UI is a open source UI framework that was built using [Tailwind CSS](https://tailwindcss.com/). [Hugo](https://gohugo.io/) is a static site generator written in the Golang programming language.
 
