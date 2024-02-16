@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang='{{ .Site.LanguageCode }}'>
+{{ partial "head.html" . }}
+<body class="flex flex-col min-h-screen">
+    {{ if (eq .Site.Params.mode "development") }}
+        {{- partial "dev/dev-tools.html" . -}}
+    {{ end }}
+    {{- partial "header.html" . -}}
+    <!-- Checking if index.html -->
+    {{ if (ne .Page.Permalink "/") }}
+    <main class="">
+        {{- block "main" . }}{{- end }}
+    </main>
+    {{ else }}
+    <main class="flex-1 grow mx-auto w-screen max-w-screen-2xl px-6 sm:px-7 xl:px-8 2xl:px-10 pt-4 sm:pt-16">
+        {{- block "main" . }}{{- end }}
+    </main>  
+    {{ end }}
+    {{- partial "footer.html" . -}}
+    {{ $prelineJs := resources.Get "/js/preline.js" }}
+    <script src="{{ $prelineJs.Permalink | relURL }}"></script>    
+</body>
+</html>

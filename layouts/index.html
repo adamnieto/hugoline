@@ -1,0 +1,131 @@
+{{ define "main" }}
+<div
+    class="bg-slate-100 pt-10 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:30px_30px]">
+    <!-- Hero -->
+    <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Grid -->
+        <div class="grid lg:grid-cols-7 lg:gap-x-8 xl:gap-x-12 lg:items-center">
+            <div class="lg:col-span-4">
+                <h1
+                    class="block text-4xl font-bold text-gray-800 sm:text-4xl md:text-5xl lg:text-7xl dark:text-white pt-4">
+                    Hey 👋 I'm                  
+                    {{ with .Site.Params.name }}
+                    {{ index (split . " ") 0 }},
+                    {{ end }}
+                </h1>
+                <p class="mt-5 text-2xl text-gray-800 dark:text-gray-400">{{.Site.Params.tagline}}</p>
+                <div class="pt-12 flex gap-4">
+                    <a type="button" href="{{ .Site.Params.github_url }}" target="_blank"
+                        class="group py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:shadow-md transition disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600 ">
+                        <svg class="w-6 h-6 text-gray-800 dark:text-white group-hover:text-blue-600" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <div class="group-hover:text-blue-600">GitHub</div>
+                    </a>
+                    <a type="button" href="{{ .Site.Params.linkedin_url }}" target="_blank"
+                        class="group py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:shadow-md transition disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600">
+                        <svg class="w-4 h-6 text-gray-800 group-hover:text-blue-600 dark:text-white" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 15 15">
+                            <path fill-rule="evenodd"
+                                d="M7.979 5v1.586a3.5 3.5 0 0 1 3.082-1.574C14.3 5.012 15 7.03 15 9.655V15h-3v-4.738c0-1.13-.229-2.584-1.995-2.584-1.713 0-2.005 1.23-2.005 2.5V15H5.009V5h2.97ZM3 2.487a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"
+                                clip-rule="evenodd" />
+                            <path d="M3 5.012H0V15h3V5.012Z" />
+                        </svg>
+
+                        <div class="group-hover:text-blue-600">LinkedIn</div>
+                    </a>
+                </div>
+            </div>
+            <!-- End Col -->
+
+            <div class="lg:col-span-3 mt-10 lg:mt-0 inline-flex items-center">
+                <img class="w-100 rounded-xl" src="{{ .Site.Params.profile_logo }}" alt="Image Description">
+            </div>
+            <!-- End Col -->
+        </div>
+        <!-- End Grid -->
+    </div>
+    <!-- End Hero -->
+    <!-- Card Section -->
+    <div class="max-w-5xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+        <!-- Grid -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
+            <!-- Card -->
+            <a class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                href="/blog/">
+                <div class="p-4 md:p-5">
+                    <div class="flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                          </svg>                                         
+                        <div class="grow ms-5">
+                            <h3
+                                class="group-hover:text-blue-600 font-semibold text-gray-800 dark:group-hover:text-gray-400 dark:text-gray-200">
+                                Blog
+                            </h3>
+                            <p class="text-sm text-gray-500">
+                                Tutorials and knowledge
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <!-- End Card -->            
+            <!-- Card -->
+            <a class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                href="projects/">
+                <div class="p-4 md:p-5">
+                    <div class="flex">                      
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3" />
+                          </svg>                          
+                        <div class="grow ms-5">
+                            <h3
+                                class="group-hover:text-blue-600 font-semibold text-gray-800 dark:group-hover:text-gray-400 dark:text-gray-200">
+                                Projects
+                            </h3>
+                            <p class="text-sm text-gray-500">
+                                Open source contributions
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <!-- End Card -->
+            <!-- Card -->
+            <a class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md transition dark:bg-slate-900 dark:border-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                href="mailto:{{ .Site.Params.email }}">
+                <div class="p-4 md:p-5">
+                    <div class="flex">
+                        <svg class="mt-1 flex-shrink-0 w-5 h-5 text-gray-800 dark:text-gray-200"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M21.2 8.4c.5.38.8.97.8 1.6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 .8-1.6l8-6a2 2 0 0 1 2.4 0l8 6Z" />
+                            <path d="m22 10-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 10" />
+                        </svg>
+
+                        <div class="grow ms-5">
+                            <h3
+                                class="group-hover:text-blue-600 font-semibold text-gray-800 dark:group-hover:text-gray-400 dark:text-gray-200">
+                                Contact me!
+                            </h3>
+                            <p class="text-sm text-gray-500">
+                                Email <span class="text-blue-600 font-medium dark:text-blue-500">{{ .Site.Params.email
+                                    }}</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <!-- End Card -->
+        </div>
+        <!-- End Grid -->
+    </div>
+    <!-- End Card Section -->
+
+</div>
+{{ end }}   

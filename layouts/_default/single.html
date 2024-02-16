@@ -1,0 +1,41 @@
+{{ define "main" }}
+{{ $readTime := mul (div (countwords .Content) 220.0) 60 }}
+{{ $minutes := math.Floor (div $readTime 60) }}
+{{ $seconds := mod $readTime 60 }}
+<!-- Blog Article -->
+<div class="max-w-3xl px-4 pt-6 lg:pt-10 pb-12 sm:px-6 lg:px-8 mx-auto">
+    <div class="max-w-2xl">
+        <div class="space-y-5 md:space-y-8">
+            <div class="space-y-3">
+                <h2 class="pt-10 text-3xl font-bold md:text-4xl dark:text-white">{{ .Title }}</h2>
+                <ul class="text-xs text-gray-500">
+                    <li
+                        class="inline-block relative pe-6 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-2 before:-translate-y-1/2 before:w-1 before:h-1 before:bg-gray-300 before:rounded-full dark:text-gray-400 dark:before:bg-gray-600">
+                        {{ .PublishDate | time.Format ":date_medium" }}
+                    </li>
+                    <li
+                        class="inline-block relative pe-6 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-2 before:-translate-y-1/2 before:w-1 before:h-1 before:bg-gray-300 before:rounded-full dark:text-gray-400 dark:before:bg-gray-600">
+                        {{ if ge $minutes 1.0 }}
+                            {{ $minutes }} {{ cond (eq $minutes 1.0) "minute" "minutes" }}
+                        {{ end }}
+                        {{ if ge $seconds 1.0 }}
+                            {{ $seconds }} {{ cond (eq $seconds 1.0) "second" "seconds" }}
+                        {{ end }}
+                    </li>
+                </ul>
+                <hr class="border-slate-200 dark:border-white">
+                <div class="space-y-3 text-lg">
+                    <div class="markdown">
+                        {{ .Content }}
+                    </div>
+                </div>
+            </div>
+            <div>
+                {{ partial "tags" . }}
+            </div>
+        </div>
+        <!-- End Content -->
+    </div>
+</div>
+<!-- End Blog Article -->
+{{ end }}
